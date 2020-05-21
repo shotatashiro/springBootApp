@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>一覧画面</title>
+</head>
+<body>
+    <h2>お問い合わせ内容一覧</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>名前</th>
+                <th>メールアドレス</th>
+                <th>お問い合わせ内容</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="inquiry : ${inquiryList}" th:object="${inquiry}">
+                <td th:text="*{name}"></td>
+                <td th:text="*{email}"></td>
+                <td th:text="*{text}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <form method="get" action="/">
+        <input type="submit" value="入力画面へ">
+    </form>
+</body>
+</html>

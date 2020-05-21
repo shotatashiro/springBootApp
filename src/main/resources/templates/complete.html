@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+    <p>送信が完了致しました。</p>
+    <form method="get" action="#" th:action="@{/inquiry/list}" th:object="${inquiryForm}">
+        <input type="submit" value="一覧画面へ">
+    </form>
+</body>
