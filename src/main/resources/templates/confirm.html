@@ -6,9 +6,9 @@
 <body>
     <h2>送信内容確認画面</h2>
     <form method="post" action="#" th:action="@{/inquiry/save}" th:object="${inquiryForm}">
-        <p>お名前:<span th:text="*{name}"></span></p>
-        <p>メールアドレス:<span th:text="*{email}"></span></p>
-        <p>お問い合わせ内容:<span th:text="*{text}"></span></p>
+        お名前:<span th:text="*{name}"></span><br>
+        email:<span th:text="*{email}"></span><br>
+        お問い合わせ内容:<span th:text="*{text}"></span><br>
 
         <input type="hidden" name="name" th:value="*{name}">
         <input type="hidden" name="email" th:value="*{email}">

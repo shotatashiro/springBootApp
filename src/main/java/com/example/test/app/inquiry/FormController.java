@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.http.HttpStatus;
+import javax.servlet.http.HttpServletResponse;
+
 
 @Controller
 @RequestMapping("/inquiry")
@@ -55,6 +59,13 @@ public class FormController {
         return "list";
     }
     
+    
+    @ExceptionHandler({ Exception.class })
+    public String handleException(Exception e, HttpServletResponse response, Model model) {
+      response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+      model.addAttribute("message", e.getMessage());
+      return "error";
+    }
    
 
 
