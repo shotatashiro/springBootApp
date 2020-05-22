@@ -2,8 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
+    <div class="container filed">
     <h2>送信内容確認画面</h2>
     <form method="post" action="#" th:action="@{/inquiry/save}" th:object="${inquiryForm}">
         お名前:<span th:text="*{name}"></span><br>
@@ -13,7 +18,13 @@
         <input type="hidden" name="name" th:value="*{name}">
         <input type="hidden" name="email" th:value="*{email}">
         <input type="hidden" name="text" th:value="*{text}">
-        <input type="submit" value="送信">
+        <button type="submit" class="btn btn-primary btn-input btn-sm">送信</button>
     </form>
+    </div>
+<!-- Bootstrapの設定 -->
+    <script th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <!-- Bootstrapの設定 -->
+    <script th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+    
 </body>
 </html>

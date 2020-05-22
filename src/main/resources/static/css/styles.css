@@ -1,0 +1,33 @@
+
+.form-group{
+    padding: 100px;
+}
+
+.filed{
+    padding: 100px;
+}
+
+
+.list-table{
+    margin-top: 40px;
+    padding: 120px;
+}
+
+
+.tag{
+    color: red;
+}
+
+.btn-input{
+    margin-top: 20px;
+}
+
+.list-title{
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.list-button{
+    margin-left: 80px;
+    margin-bottom: 40px;
+}
