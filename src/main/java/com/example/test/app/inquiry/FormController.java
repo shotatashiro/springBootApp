@@ -38,6 +38,7 @@ public class FormController {
     	model.addAttribute("inquiryForm",inquiryForm);
         return "confirm";
     }
+    
 
     @PostMapping("/save")
     public String save(@Validated InquiryForm inquiryForm, BindingResult result) {
@@ -51,7 +52,7 @@ public class FormController {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    @RequestMapping("/list")
+    @GetMapping("/list")
     public String list(Model model){
         List<Map<String,Object>> list;
         list = jdbcTemplate.queryForList("select * from inquiry");
